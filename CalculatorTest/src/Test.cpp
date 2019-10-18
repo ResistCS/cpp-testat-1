@@ -95,6 +95,39 @@ void test_stream_divide_by_zero(){
 	std::istringstream input{"4 / 0"};
 	ASSERT_THROWS(calc(input), std::invalid_argument);
 }
+
+void test_calc_three_by_2(){
+	auto result = calc(3, 2, '/');
+	ASSERT_EQUAL(1, result);
+}
+
+void test_calc_float_plus_int(){
+	auto result = calc(1, 1.0, '+');
+	ASSERT_EQUAL(2, result);
+}
+
+void test_calc_float_plus_float(){
+	auto result = calc(1.0, 1.0, '+');
+	ASSERT_EQUAL(2, result);
+}
+
+void test_stream_three_by_two(){
+	std::istringstream input{"3 / 2"};
+	auto result = calc(input);
+	ASSERT_EQUAL(1, result);
+}
+
+void test_stream_float_plus_int(){
+	std::istringstream input{"3.0 + 1"};
+	auto result = calc(input);
+	ASSERT_EQUAL(4, result);
+}
+
+void test_stream_float_plus_float(){
+	std::istringstream input{"2.0 + 2.0"};
+	auto result = calc(input);
+	ASSERT_EQUAL(4, result);
+}
 //*********************************************************
 
 //*********************************************************
@@ -185,6 +218,12 @@ bool runAllTests(int argc, char const *argv[]) {
 	s.push_back(CUTE(testPrintLargeNumberMinusTwelve));
 	s.push_back(CUTE(testPocketcalc));
 	s.push_back(CUTE(testPocketcalcMinus));
+	s.push_back(CUTE(test_calc_three_by_2));
+	s.push_back(CUTE(test_calc_float_plus_int));
+	s.push_back(CUTE(test_calc_float_plus_float));
+	s.push_back(CUTE(test_stream_float_plus_int));
+	s.push_back(CUTE(test_stream_three_by_two));
+	s.push_back(CUTE(test_stream_float_plus_float));
 	cute::xml_file_opener xmlfile(argc, argv);
 	cute::xml_listener<cute::ide_listener<>> lis(xmlfile.out);
 	auto runner = cute::makeRunner(lis, argc, argv);

@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lPocketCalcLib
+LIBS := -lPocketCalcLib -lDigitsLib -lCalcLib
 

@@ -40,13 +40,15 @@ endif
 all: Main
 
 dependents:
-	-cd /home/resist/Semester3/C++/Testat/cpp-testat-1/PocketCalcLib/Debug && $(MAKE) all
+	-cd /home/resist/Semester3/C++/Testat/cpp-testat-1/PocketCalcLib/Debug && $(MAKE) clean all
+	-cd /home/resist/Semester3/C++/Testat/cpp-testat-1/CalcLib/Debug && $(MAKE) clean all
+	-cd /home/resist/Semester3/C++/Testat/cpp-testat-1/DigitsLib/Debug && $(MAKE) clean all
 
 # Tool invocations
-Main: $(OBJS) $(USER_OBJS) /home/resist/Semester3/C++/Testat/cpp-testat-1/PocketCalcLib/Debug/libPocketCalcLib.a
+Main: $(OBJS) $(USER_OBJS) /home/resist/Semester3/C++/Testat/cpp-testat-1/PocketCalcLib/Debug/libPocketCalcLib.a /home/resist/Semester3/C++/Testat/cpp-testat-1/CalcLib/Debug/libCalcLib.a /home/resist/Semester3/C++/Testat/cpp-testat-1/DigitsLib/Debug/libDigitsLib.a
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L"/home/resist/Semester3/C++/Testat/cpp-testat-1/PocketCalcLib/Debug" -o "Main" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"/home/resist/Semester3/C++/Testat/cpp-testat-1/DigitsLib/Debug" -L"/home/resist/Semester3/C++/Testat/cpp-testat-1/CalcLib/Debug" -L"/home/resist/Semester3/C++/Testat/cpp-testat-1/PocketCalcLib/Debug" -o "Main" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -57,5 +59,7 @@ clean:
 
 .PHONY: all clean dependents
 /home/resist/Semester3/C++/Testat/cpp-testat-1/PocketCalcLib/Debug/libPocketCalcLib.a:
+/home/resist/Semester3/C++/Testat/cpp-testat-1/CalcLib/Debug/libCalcLib.a:
+/home/resist/Semester3/C++/Testat/cpp-testat-1/DigitsLib/Debug/libDigitsLib.a:
 
 -include ../makefile.targets

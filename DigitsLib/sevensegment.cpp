@@ -18,11 +18,12 @@ std::vector<std::vector<std::string>> getDigits(){
 	std::vector<std::string> const seven { 	" - ", "  |", "   ", "  |", "   " };
 	std::vector<std::string> const eight { 	" - ", "| |", " - ", "| |", " - " };
 	std::vector<std::string> const nine { 	" - ", "| |", " - ", "  |", " - " };
-	std::vector<std::string> const minus { 	"   ", "   ", "---", "   ", "   " };
+	std::vector<std::string> const minus { 	"   ", "   ", " - ", "   ", "   " };
 	std::vector<std::vector<std::string>> const digits { zero, one, two, three, four, five, six, seven, eight, nine, minus };
 	return digits;
 
 }
+
 
 
 
@@ -55,11 +56,14 @@ void printLargeNumber(int i, std::ostream &out){
 
 
 
+
 void printLargeDigit(int i, std::ostream &out){
 	std::vector<std::string> dig = getDigits()[i];
 	std::copy(dig.begin(), dig.end(), std::ostream_iterator<std::string>(out, "\n"));
 
 }
+
+
 
 void printLargeError(std::ostream &out){
 	out <<	" -             \n"

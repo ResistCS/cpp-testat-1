@@ -4,6 +4,8 @@
 	<comment></comment>
 	<projects>
 		<project>PocketCalcLib</project>
+		<project>CalcLib</project>
+		<project>DigitsLib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
