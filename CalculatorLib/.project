@@ -3,6 +3,8 @@
 	<name>CalculatorLib</name>
 	<comment></comment>
 	<projects>
+		<project>CalcLib</project>
+		<project>DigitsLib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

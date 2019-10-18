@@ -1,0 +1,24 @@
+<testsuites>
+	<testsuite name="AllTests" tests="20">
+		<testcase classname="AllTests" name="test_one_plus_one"/>
+		<testcase classname="AllTests" name="test_one_times_one"/>
+		<testcase classname="AllTests" name="test_four_through_two"/>
+		<testcase classname="AllTests" name="test_one_minus_one"/>
+		<testcase classname="AllTests" name="test_stream_one_plus_one"/>
+		<testcase classname="AllTests" name="test_stream_four_modulo_two"/>
+		<testcase classname="AllTests" name="test_stream_one_minus_three"/>
+		<testcase classname="AllTests" name="test_stream_4_through_2"/>
+		<testcase classname="AllTests" name="test_stream_three_times_2"/>
+		<testcase classname="AllTests" name="test_stream_one_plus_one_ws"/>
+		<testcase classname="AllTests" name="test_one_times_minusone"/>
+		<testcase classname="AllTests" name="test_one_times_zero"/>
+		<testcase classname="AllTests" name="test_four_modulo_two"/>
+		<testcase classname="AllTests" name="test_one_minus_three"/>
+		<testcase classname="AllTests" name="test_stream_divide_by_zero"/>
+		<testcase classname="AllTests" name="testPrintLargeDigitZero"/>
+		<testcase classname="AllTests" name="testPrintLargeNumberTwelve"/>
+		<testcase classname="AllTests" name="testPrintLargeNumberMinusTwelve"/>
+		<testcase classname="AllTests" name="testPocketcalc"/>
+		<testcase classname="AllTests" name="testPocketcalcMinus"/>
+	</testsuite>
+</testsuites>
